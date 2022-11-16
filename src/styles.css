@@ -31,3 +31,9 @@
   position: relative;
   background: #FFFFFF;
 }
+
+hr {
+  height: 3px;
+  background-color: #444;
+  border-radius: 50px;
+}
