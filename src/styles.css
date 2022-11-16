@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('./assets/css/bootstrap.min.css');
+@import url('./assets/css/now-ui-kit.css');
+@import url('./theme.css');
+@import'~swiper/swiper.min.css';
+
+.whatsapp {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  z-index:100;
+}
+
+.whatsapp-icon {
+  margin-top:13px;
+}
+
+.whatsapp:hover {
+  color: white;
+  background-color: #2e9153;
+}
+
+.section {
+  padding: 20px 0;
+  position: relative;
+  background: #FFFFFF;
+}

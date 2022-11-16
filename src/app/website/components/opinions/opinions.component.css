@@ -1,0 +1,18 @@
+.card {
+  min-height: 300px;
+}
+
+.card > .name_opinion  p{
+  font-size: 1.06em !important;
+  margin-bottom: 0px !important;
+}
+.card > .card-img-content > .card-img-top {
+  width: 80px;
+  height: 80px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-width: none;
+  align-content: center;
+}

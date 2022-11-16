@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  //url: 'http://localhost:3000/'
+  //url: 'https://secret-escarpment-51757.herokuapp.com/'
+  url: 'https://web-production-2daf.up.railway.app/'
 };
 
 /*

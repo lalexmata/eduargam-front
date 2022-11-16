@@ -1,0 +1,36 @@
+
+
+
+<div class="section section-clientes ">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="title"> Opiniones de nuestros clientes</h2>
+      </div>
+
+      <div class="col-12">
+        <swiper [config]="swiperConfig">
+          <ng-template *ngFor="let opinion of opinions" swiperSlide>
+            <div class="col-xs-4">
+              <div class="card">
+                <div class="card-img-content text-center">
+                  <img class="card-img-top" src="https://www.cdc.gov/ncbddd/sicklecell/betterhealthtoolkit/images/pale-skin.png?_=68880" alt="Card image cap">
+                </div>
+                <div class="card-body text-center">
+                  <p class="card-text text_bold name_opinion"><b>{{ opinion.name }}</b></p>
+                  <span class="text_bold"><b>{{ opinion.client_name }}</b></span>
+                  <p class="card-text text-justify">{{ opinion.opinion }}</p>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <!--<ng-template swiperSlide>
+            sdjbsd
+            <img src="https://media.istockphoto.com/photos/technician-repairing-air-conditioner-picture-id1308375294?b=1&k=20&m=1308375294&s=612x612&w=0&h=oPQiZ4auN--8BKE9YCwSaqpEmmrUVPJHAcyUIk1ORTU=" alt="">
+          </ng-template>-->
+
+        </swiper>
+      </div>
+    </div>
+  </div>
+</div>

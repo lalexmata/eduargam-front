@@ -1,0 +1,20 @@
+
+.categories:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.15))!important;
+  transition: transform .5s ease;
+}
+
+.categories {
+  border-radius: 8px;
+}
+
+hr {
+  height: 3px;
+  background-color: #444;
+  border-radius: 50px;
+}
+
+.card-img-top {
+  height: 180px;
+}

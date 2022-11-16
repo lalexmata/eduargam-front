@@ -1,0 +1,22 @@
+<div class="section" *ngIf="categorias" >
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-xs-12 text-center">
+        <h2>Nuestros Servicios</h2>
+        <hr/>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12" *ngFor="let categoria of categorias">
+        <div class="card text-center categories" >
+          <img [src]="categoria.image" class="card-img-top" alt="..." style="height: 170;">
+          <div class="card-body">
+            <h5 class="card-title">{{ categoria.name}}</h5>
+            <div class="card-text text-left">
+              <div [innerHTML]='categoria.description'></div>
+            </div>
+            <a [routerLink]="'/categorias/'+ categoria.slug" class="btn btn-primary" *ngIf="categoria.slug !==''">Ver más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
