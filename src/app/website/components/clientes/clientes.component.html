@@ -1,0 +1,15 @@
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Nuestros Clientes</h2>
+                <hr/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" *ngFor="let cliente of clients">
+                <img [src]="cliente.logo" width="200" [alt]="cliente.name" [title]="cliente.name">
+            </div>
+        </div>
+    </div>
+</div>

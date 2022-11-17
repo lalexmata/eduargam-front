@@ -11,6 +11,7 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { CategoriasComponent } from './components/categorias/categorias.component';
 import {SwiperModule} from "swiper/angular";
 import {OpinionsComponent} from "./components/opinions/opinions.component";
+import { ClientesComponent } from './components/clientes/clientes.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {OpinionsComponent} from "./components/opinions/opinions.component";
         FooterComponent,
         CarruselComponent,
         CategoriasComponent,
-        OpinionsComponent
+        OpinionsComponent,
+        ClientesComponent
     ],
     exports: [
         NavComponent
