@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  url: 'https://secret-escarpment-51757.herokuapp.com/'
+  url: 'https://web-production-2daf.up.railway.app/'
 };
