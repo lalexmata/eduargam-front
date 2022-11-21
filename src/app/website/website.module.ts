@@ -12,6 +12,8 @@ import { CategoriasComponent } from './components/categorias/categorias.componen
 import {SwiperModule} from "swiper/angular";
 import {OpinionsComponent} from "./components/opinions/opinions.component";
 import { ClientesComponent } from './components/clientes/clientes.component';
+import { FormContactoComponent } from './components/form-contacto/form-contacto.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { ClientesComponent } from './components/clientes/clientes.component';
         CarruselComponent,
         CategoriasComponent,
         OpinionsComponent,
-        ClientesComponent
+        ClientesComponent,
+        FormContactoComponent,
+        ContactComponent
     ],
     exports: [
         NavComponent
