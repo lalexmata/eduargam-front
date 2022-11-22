@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ViewportScroller } from "@angular/common";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private scroller: ViewportScroller,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+    this.router.navigate(["/"]);
+  }
+
+  scroll(element: string) {
+    this.scroller.scrollToAnchor(element);
   }
 
 }

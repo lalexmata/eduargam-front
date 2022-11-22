@@ -71,37 +71,37 @@
             </span>
               </div>
               <select class="form-control">
-                <option>Seleccione servicio...</option>
-                <option>Servicio 1</option>
-                <option>Servicio 2</option>
-                <option>Servicio 3</option>
+                <option value="">Seleccione servicio...</option>
+                <option *ngFor="let categoria of  categorias" [value]="categoria.id">{{ categoria.name }}</option>
               </select>
             </div>
-
+            <div class="col-xs-12 text-bold">
+              Tipo de contacto
+            </div>
             <div class="input-group no-border">
               <div class="input-group-prepend">
             <span class="input-group-text">
-              Tipo Contacto
+              <i class="fa fa-phone" aria-hidden="true"></i>
             </span>
               </div>
 
               <div class="form-check form-check-radio">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="telefono">
+                  <input class="form-check-input" type="radio" name="tipo_contacto"  value="telefono">
                   <span class="form-check-sign"></span>
                   Telefono
                 </label>
               </div>
               <div class="form-check form-check-radio">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="whatsapp">
+                  <input class="form-check-input" type="radio" name="tipo_contacto" value="whatsapp">
                   <span class="form-check-sign"></span>
                   Whatsapp
                 </label>
               </div>
               <div class="form-check form-check-radio">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="correo">
+                  <input class="form-check-input" type="radio" name="tipo_contacto" value="correo">
                   <span class="form-check-sign"></span>
                   Correo
                 </label>
@@ -115,6 +115,14 @@
             Unchecked
             </label>
           </div> -->
+            <div class="input-group no-border">
+              <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="fa fa-comment" aria-hidden="true"></i>
+            </span>
+              </div>
+              <textarea class="form-control" placeholder="Comentarios"></textarea>
+            </div>
           </div>
           <div class="card-footer text-center">
             <button type="button" class="btn btn-primary">
