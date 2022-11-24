@@ -14,6 +14,8 @@ import {OpinionsComponent} from "./components/opinions/opinions.component";
 import { ClientesComponent } from './components/clientes/clientes.component';
 import { FormContactoComponent } from './components/form-contacto/form-contacto.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ConveniosComponent } from './components/convenios/convenios.component';
+
 
 
 @NgModule({
@@ -28,15 +30,16 @@ import { ContactComponent } from './pages/contact/contact.component';
         OpinionsComponent,
         ClientesComponent,
         FormContactoComponent,
-        ContactComponent
+        ContactComponent,
+        ConveniosComponent
     ],
     exports: [
         NavComponent
     ],
-    imports: [
-        CommonModule,
-        WebsiteRoutingModule,
-        SwiperModule
-    ]
+  imports: [
+    CommonModule,
+    WebsiteRoutingModule,
+    SwiperModule,
+  ]
 })
 export class WebsiteModule { }

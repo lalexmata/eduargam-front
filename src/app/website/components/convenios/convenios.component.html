@@ -1,0 +1,28 @@
+
+
+
+
+<div class="section section-clientes ">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2> Convenios </h2>
+        <hr/>
+      </div>
+
+      <div class="col-12">
+        <swiper [config]="swiperConfig">
+          <ng-template *ngFor="let convenio of convenios" swiperSlide>
+            <div class="col-xs-4">
+              <div class="card">
+                <div class="card-img-content text-center">
+                  <img class="card-img-top" [src]="convenio.imagen" [alt]="convenio.title">
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </swiper>
+      </div>
+    </div>
+  </div>
+</div>
