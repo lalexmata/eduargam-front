@@ -1,0 +1,54 @@
+<div class="text-right">
+  <a routerLink="create">
+    <button class="btn btn-primary">
+      <i class="fa fa-plus"></i> Nueva
+    </button>
+  </a>
+</div>
+<div class="card">
+  <div class="card-header">
+    <div data-background-color="orange" class="col-12 text-center">
+      <h3>Listado de Categorías</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Tab panes -->
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">Descripción</th>
+              <th scope="col">Tipo</th>
+              <th scope="col">Imagen</th>
+              <th scope="col">Acción</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let categoria of categories">
+              <th scope="row">{{ categoria.name }}</th>
+              <td [innerHTML]='categoria.description'></td>
+              <td>{{ categoria.type }}</td>
+              <td><img [src]="categoria.image" width="50"></td>
+              <td>
+                <a [routerLink]="['edit', categoria.id]">
+                  <button class="btn btn-info btn-sm" title="Editar">
+                    <i class="fa fa-edit"></i>
+                  </button>
+                </a>
+                <button
+                  class="btn btn-danger btn-sm"
+                  title="Eliminar"
+                  (click)="deleteCategory(categoria.id)"
+                >
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

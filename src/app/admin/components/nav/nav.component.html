@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg bg-warning">
+  <div class="container">
+    <a class="navbar-brand"routerLink="/admin">
+      <img src="./assets/img/eduargam-white.png" alt="Eduardgam Project & Services" width="40">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#example-navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-bar bar1"></span>
+      <span class="navbar-toggler-bar bar2"></span>
+      <span class="navbar-toggler-bar bar3"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="example-navbar" data-nav-image="assets/img/blurred-image-1.jpg">
+      <ul class="navbar-nav">
+        <li class="nav-item" >
+          <a class="nav-link" routerLink="contacto" routerLinkActive="active">
+            <p><i class="fa fa-envelope"></i> Contacto</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="categories" routerLinkActive="active">
+            <p><i class="fa fa-tags"></i> Categorias</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="posts" routerLinkActive="active">
+            <p><i class="fa fa-clipboard"></i> Posts</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="clientes" routerLinkActive="active">
+            <p> <i class="fa fa-users"></i> clientes</p>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="javascript(0);" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <p>
+              <i class="fa fa-user"></i> Usuario
+            </p>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="/admin">
+              <i class="fa fa-id-card" aria-hidden="true"></i> Perfil
+            </a>
+            <a class="dropdown-item" routerLink="/admin">
+              <i class="fa fa-sign-out" aria-hidden="true"></i> Salir
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
