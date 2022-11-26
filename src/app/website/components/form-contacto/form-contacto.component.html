@@ -7,9 +7,9 @@
   </div>
   <div class="card-body">
     <!-- Tab panes -->
-    <div class="tab-content text-center">
+    <div class="tab-content">
       <div class="tab-pane active" id="home1" role="tabpanel">
-        <form class="form" method="" action="">
+        <form class="form" [formGroup]="form">
           <div class="card-header text-center">
 
           </div>
@@ -21,7 +21,12 @@
               <i class="now-ui-icons users_single-02"></i>
             </span>
               </div>
-              <input type="text" class="form-control" placeholder="Nombre y apellido ó  Empresa">
+              <input type="text" class="form-control" formControlName="name" placeholder="Nombre y apellido ó  Empresa">
+            </div>
+            <div class="col-xs-12">
+              <small class="message-error">
+                <strong *ngIf="nameField?.touched && nameField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
             </div>
 
             <!-- input rut -->
@@ -31,7 +36,12 @@
               <i class="now-ui-icons business_badge"></i>
             </span>
               </div>
-              <input type="text" class="form-control" placeholder="Rut">
+              <input type="text" class="form-control" placeholder="Rut" formControlName="rut">
+            </div>
+            <div class="col-xs-12">
+              <small class="message-error">
+                <strong *ngIf="rutField?.touched && rutField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
             </div>
 
             <!-- input nombre -->
@@ -41,7 +51,12 @@
               <i class="now-ui-icons tech_mobile"></i>
             </span>
               </div>
-              <input type="text" placeholder="telefono" class="form-control" />
+              <input type="text" placeholder="telefono" formControlName="telephone"  class="form-control" />
+            </div>
+            <div class="col-xs-12">
+              <small class="message-error">
+                <strong *ngIf="telephoneField?.touched && telephoneField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
             </div>
 
             <!-- input correo -->
@@ -51,7 +66,14 @@
               <i class="now-ui-icons ui-1_email-85"></i>
             </span>
               </div>
-              <input type="text" class="form-control" placeholder="Correo">
+              <input type="text" class="form-control" placeholder="Correo" formControlName="email">
+              <div class="col-12">
+              </div>
+            </div>
+            <div class="col-xs-12">
+              <small class="message-error">
+                <strong *ngIf="emailField?.touched && emailField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
             </div>
 
             <div class="input-group no-border">
@@ -60,9 +82,13 @@
               <i class="now-ui-icons ui-1_email-85"></i>
             </span>
               </div>
-              <textarea class="form-control" placeholder="Direccion"></textarea>
+              <textarea class="form-control" placeholder="Direccion" formControlName="address"></textarea>
             </div>
-
+            <div class="col-xs-12">
+              <small class="message-error">
+                <strong *ngIf="addressField?.touched && addressField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
+            </div>
 
             <div class="input-group no-border">
               <div class="input-group-prepend">
@@ -70,10 +96,15 @@
               <i class="now-ui-icons ui-2_settings-90"></i>
             </span>
               </div>
-              <select class="form-control">
+              <select class="form-control" formControlName="category_id">
                 <option value="">Seleccione servicio...</option>
                 <option *ngFor="let categoria of  categorias" [value]="categoria.id">{{ categoria.name }}</option>
               </select>
+            </div>
+            <div class="col-xs-12">
+              <small class="message-error">
+                <strong *ngIf="categoryField?.touched && categoryField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
             </div>
             <div class="col-xs-12 text-bold">
               Tipo de contacto
@@ -87,26 +118,30 @@
 
               <div class="form-check form-check-radio">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="tipo_contacto"  value="telefono">
+                  <input class="form-check-input" type="radio" name="tipo_contacto"  value="telefono" formControlName="tipo_contacto">
                   <span class="form-check-sign"></span>
                   Telefono
                 </label>
               </div>
               <div class="form-check form-check-radio">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="tipo_contacto" value="whatsapp">
+                  <input class="form-check-input" type="radio" name="tipo_contacto" value="whatsapp" formControlName="tipo_contacto">
                   <span class="form-check-sign"></span>
                   Whatsapp
                 </label>
               </div>
               <div class="form-check form-check-radio">
                 <label class="form-check-label">
-                  <input class="form-check-input" type="radio" name="tipo_contacto" value="correo">
+                  <input class="form-check-input" type="radio" name="tipo_contacto" value="correo" formControlName="tipo_contacto">
                   <span class="form-check-sign"></span>
                   Correo
                 </label>
               </div>
-
+            </div>
+            <div class="col-xs-12">
+              <small class="message-error">
+                <strong *ngIf="tipoContactoField?.touched && tipoContactoField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
             </div>
             <!-- If you want to add a checkbox to this form, uncomment this code -->
             <!-- <div class="checkbox">
@@ -121,11 +156,15 @@
               <i class="fa fa-comment" aria-hidden="true"></i>
             </span>
               </div>
-              <textarea class="form-control" placeholder="Comentarios"></textarea>
+              <textarea class="form-control" placeholder="Comentarios" formControlName="comments"></textarea>
             </div>
           </div>
           <div class="card-footer text-center">
-            <button type="button" class="btn btn-primary">
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="save()"
+            >
               Enviar
             </button>
           </div>
