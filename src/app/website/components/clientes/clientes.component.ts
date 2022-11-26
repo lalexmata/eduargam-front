@@ -20,7 +20,6 @@ export class ClientesComponent implements OnInit {
 
   async getClients() {
     this.clients = await this.clientService.getClients();
-    console.log(this.clients);
   }
 
 }

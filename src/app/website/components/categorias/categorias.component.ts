@@ -22,7 +22,6 @@ export class CategoriasComponent implements OnInit {
 
   async getCategories() {
     this.categorias = await this.categoryService.getCategorias();
-    console.log(this.categorias);
   }
 
 }

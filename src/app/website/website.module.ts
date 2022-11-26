@@ -15,6 +15,7 @@ import { ClientesComponent } from './components/clientes/clientes.component';
 import { FormContactoComponent } from './components/form-contacto/form-contacto.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ConveniosComponent } from './components/convenios/convenios.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -36,10 +37,11 @@ import { ConveniosComponent } from './components/convenios/convenios.component';
     exports: [
         NavComponent
     ],
-  imports: [
-    CommonModule,
-    WebsiteRoutingModule,
-    SwiperModule,
-  ]
+    imports: [
+        CommonModule,
+        WebsiteRoutingModule,
+        SwiperModule,
+        ReactiveFormsModule,
+    ]
 })
 export class WebsiteModule { }
