@@ -1,0 +1,149 @@
+<div class="card">
+  <div class="card-header">
+    <div class="text-center" data-background-color="orange" style="padding: 5px">
+      <h3>{{ title }}</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="home1" role="tabpanel">
+        <form action="" [formGroup]="form">
+          <div class="row">
+            <div class="col-12">
+              <div class="alert alert-warning" role="alert">
+                <div class="container">
+                  <div class="alert-icon">
+                    <i class="now-ui-icons ui-1_bell-53"></i>
+                  </div>
+                  <div class="col-xs-12 text-center">
+                    <strong class="text-center">PENDIENTE</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- muestreo de datos-->
+
+            <!-- DATOS DEL CLIENTE-->
+            <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 text-center">
+              <img src="../assets/img/avatar.jpg" alt="nombre empresa" class="rounded img-fluid img-raised">
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-6 col-xs-12">
+              <table class="table-bordered table">
+                <tr class="bg-primary">
+                  <td colspan="3">
+                    <h6 class="text-capitalize text-white text-center">Datos del cliente</h6>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>NOMBRE:</strong>:KJVBD</td>
+                  <td><strong>RUT:</strong> &nbsp;1-9</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>RUT:</td>
+                  <td>dsljkbhs</td>
+                  <td>123456</td>
+                </tr>
+                <tr>
+                  <td>DIRECCIÓN</td>
+                  <td>dsljkbhs</td>
+                  <td>123456</td>
+                </tr>
+              </table>
+            </div>
+            <!-- FIN DATOS DEL CLIENTE-->
+            <!-- INFORMACION DLE SERVICIO-->
+            <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
+              <table class="table-bordered table">
+                <tr class="bg-primary">
+                  <td colspan="3">
+                    <h6 class="text-capitalize text-white text-center">INFORMACIÓN DEL SERVICIO</h6>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2"><strong>TIPO DE SERVICIO:</strong> TIPO DE SERVICIO </td>
+                </tr>
+                <tr>
+                  <td colspan="2">
+                    <strong>DESCRIPCIÓN DEL CLIENTE:</strong> <br>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                  </td>
+
+                </tr>
+
+              </table>
+            </div>
+
+            <!-- FIN INFORMACION DLE SERVICIO-->
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <label for="status">Estado:</label>
+              <div class="input-group no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-tag"></i></span>
+                </div>
+                <select formControlName="status" class="form-control">
+                  <option value="">Seleccione ...</option>
+                  <option value="0">Pendiente</option>
+                  <option value="1">Resuelto</option>
+                </select>
+              </div>
+              <small class="message-error">
+                <strong *ngIf="typeField?.touched && typeField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
+            </div>
+
+            <div class="col-12">
+              <label for="comments">Agregar Comentario:</label>
+              <div class="textarea-container">
+                <textarea
+                  class="form-control"
+                  rows="4"
+                  cols="80"
+                  placeholder="Agregar comentario"
+                  formControlName="description"
+                ></textarea>
+                <small class="message-error">
+                  <strong *ngIf="descriptionField?.touched && descriptionField?.hasError('required')">Este campo es obligatorio</strong>
+                </small>
+              </div>
+            </div>
+            <div class="col-12 text-center">
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="save()"
+              >
+                Guardar
+              </button>
+            </div>
+
+            <div class="col-12">
+              <h3>Comentarios</h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-hover">
+                <thead>
+                  <th>Comentario</th>
+                  <th>Fecha</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>dskjbsdv</td>
+                    <td>26/11/2022</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          <div class="card-footer text-center">
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

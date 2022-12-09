@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'contacto',
-        loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)
+        loadChildren: () => import('./contacto/contacto.module').then(m => m.ContactoModule)
       },
       {
         path: 'clientes',

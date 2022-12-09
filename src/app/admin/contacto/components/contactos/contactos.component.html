@@ -1,0 +1,50 @@
+<div class="text-right">
+  <a routerLink="create">
+    <button class="btn btn-primary">
+      <i class="fa fa-plus"></i> Nueva
+    </button>
+  </a>
+</div>
+<div class="card">
+  <div class="card-header">
+    <div data-background-color="orange" class="col-12 text-center">
+      <h3>Listado de Solicitudes de contacto</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Tab panes -->
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th scope="col">Cliente</th>
+            <th scope="col">Servicio</th>
+            <th scope="col">fecha</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acción</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let solicitud of solicitudes">
+            <th>{{ solicitud?.client?.name }}</th>
+            <td>{{solicitud.category.name}}</td>
+            <td>{{ solicitud.created_at }}</td>
+            <td>
+              <span *ngIf="solicitud.status === 0" class="badge badge-warning">PENDIENTE</span>
+              <span *ngIf="solicitud.status === 1" class="badge badge-success">LISTO</span>
+            </td>
+            <td>
+              <a [routerLink]="['gestionar', solicitud.id]">
+                <button class="btn btn-info btn-sm" title="Gestionar">
+                  <i class="fa fa-eye"></i>
+                </button>
+              </a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
