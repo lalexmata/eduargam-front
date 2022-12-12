@@ -1,0 +1,81 @@
+<div class="card">
+  <div class="card-header">
+    <div class="text-center" data-background-color="orange" style="padding: 5px">
+      <h3>{{ title }}</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="home1" role="tabpanel">
+        <form action="" [formGroup]="form">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <label for="name">Nombre:</label>
+              <div class="input-group no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user-circle"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Nombre" formControlName="name">
+              </div>
+              <small class="message-error">
+                <strong *ngIf="nameField?.touched && nameField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <label for="email">Correo:</label>
+              <div class="input-group no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                </div>
+                <input type="email" class="form-control" placeholder="email" formControlName="email">
+              </div>
+              <small class="message-error">
+                <strong *ngIf="emailField?.touched && emailField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <label for="role">Perfil:</label>
+              <div class="input-group no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-tag"></i></span>
+                </div>
+                <select formControlName="role_id" class="form-control">
+                  <option value="">Seleccione ...</option>
+                  <option *ngFor="let role of roles" [value]="role?.id">{{role?.name}}</option>
+                </select>
+              </div>
+              <small class="message-error">
+                <strong *ngIf="roleField?.touched && roleField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <label for="password">Contraseña:</label>
+              <div class="input-group no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-key"></i></span>
+                </div>
+                <input type="password" formControlName="password" class="form-control" autocomplete="false">
+              </div>
+              <small class="message-error">
+                <strong *ngIf="passwordField?.touched && passwordField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
+            </div>
+
+
+
+          </div>
+          <div class="card-footer text-center">
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="save()"
+            >
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
