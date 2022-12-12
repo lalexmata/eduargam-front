@@ -56,7 +56,6 @@ export class UserFormComponent implements OnInit {
           name: res.name,
           role_id: res?.role?.id,
           email: res.email,
-          password: ''
         };
         this.form.patchValue(datos);
       }, error => {
@@ -100,6 +99,17 @@ export class UserFormComponent implements OnInit {
   save() {
     this.form.markAllAsTouched()
     if(this.form.invalid) {return}
+    if(this.user_id){
+      console.log('actualiza')
+      this.actualizar();
+    }else {
+      console.log('crea')
+      //this.crear();
+    }
+
+  }
+
+  crear() {
     this.userService.create(this.form.value)
       .subscribe((res) => {
         Swall.fire({
@@ -120,7 +130,30 @@ export class UserFormComponent implements OnInit {
         })
         console.log('Ocurrió un error', error);
       })
+  }
 
+  actualizar() {
+    const id = this.user_id ? this.user_id.toString() : '';
+    this.userService.update(id, this.form.value)
+      .subscribe((res) => {
+        Swall.fire({
+          icon: 'success',
+          title: 'Actualizado exitosamente',
+          confirmButtonText: 'Ok',
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            this.goTo('/admin/users');
+          }
+        })
+      }, error => {
+        Swall.fire({
+          icon: 'error',
+          title: 'Ocurrió un error al guardar la información',
+          confirmButtonText: 'Ok',
+        })
+        console.log('Ocurrió un error', error);
+      })
   }
 
 }

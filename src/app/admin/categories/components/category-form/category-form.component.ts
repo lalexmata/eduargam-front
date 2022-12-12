@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators, FormBuilder} from '@angular/forms';
 import {CategoryService} from "../../../../api/category.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import Swall from 'sweetalert2';
+
 @Component({
   selector: 'app-category-form',
   templateUrl: './category-form.component.html',
@@ -30,6 +31,26 @@ export class CategoryFormComponent implements OnInit {
       this.getCategory(this.category_id);
     }
 
+  }
+  // para implementar el guard exit
+  onExit() {
+    let salir = false;
+    Swall.fire({
+      title: '¿Está seguro de salir?',
+      text: "No podrá deshacer esta acción!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si',
+      cancelButtonText: 'No',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        salir = true;
+      }
+    })
+
+    return salir;
   }
 
   get nameField() {

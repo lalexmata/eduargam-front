@@ -26,7 +26,7 @@ export class UserService {
     return this.http.get<User>(`${this.urlApi}/${id}`);
   }
 
-  update(id: number, data: UpdateUserDto) {
+  update(id: string, data: UpdateUserDto) {
     return this.http.put<User>(`${this.urlApi}/${id}`, data);
   }
 
