@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {LayoutComponent} from "./components/layout/layout.component";
 import {HomeComponent} from "./components/home/home.component";
 import {ContactComponent} from "./pages/contact/contact.component";
+import {PostsCategoryComponent} from "./pages/posts-category/posts-category.component";
+
 
 const routes: Routes = [
   {
@@ -21,6 +23,15 @@ const routes: Routes = [
       {
         path: 'contacto',
         component: ContactComponent,
+      },
+      {
+        path: 'posts',
+        children: [
+          {
+            path: 'categoria/:category',
+            component: PostsCategoryComponent,
+          }
+        ]
       }
 
     ]

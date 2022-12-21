@@ -13,7 +13,7 @@
             <div class="card-text text-left">
               <div [innerHTML]='categoria.description'></div>
             </div>
-            <a [routerLink]="'/categorias/'+ categoria.slug" class="btn btn-primary" *ngIf="categoria.slug !==''">Ver más</a>
+            <a [routerLink]="'/posts/categoria/'+ categoria.slug" class="btn btn-primary" *ngIf="categoria.slug !==''">Ver más</a>
           </div>
         </div>
       </div>

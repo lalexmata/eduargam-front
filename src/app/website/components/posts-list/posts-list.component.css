@@ -1,0 +1,15 @@
+.post:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.15))!important;
+  transition: transform .5s ease;
+}
+
+.post {
+  border-radius: 8px;
+  height: 450px;
+}
+
+
+.card-img-top {
+  height: 180px;
+}
