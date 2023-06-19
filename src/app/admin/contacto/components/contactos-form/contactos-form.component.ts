@@ -26,15 +26,20 @@ export class ContactosFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.contacto_id =this.route.snapshot.paramMap.get('id');
+    console.log(this.contacto_id);
     if(!this.contacto_id){
+      console.log('no se busca nada');
       // TODO: buscar informacion de la categoria
     }else{
+      console.log('se busca INFO');
       this.getSolicitud(this.contacto_id);
     }
 
   }
 
   async getSolicitud(id: string){
+    this.solicitud = await this.contactoService.getSolicitud(id);
+    console.log(this.solicitud);
     //await this.contactoService.
   }
 
@@ -120,6 +125,7 @@ export class ContactosFormComponent implements OnInit {
     return this.formBuilder.group({
       status: [''],
       comments: [''],
+      description: [''],
     });
   }
 
