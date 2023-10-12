@@ -16,7 +16,8 @@ import { FormContactoComponent } from './components/form-contacto/form-contacto.
 import { ContactComponent } from './pages/contact/contact.component';
 import { ConveniosComponent } from './components/convenios/convenios.component';
 import {ReactiveFormsModule} from "@angular/forms";
-
+import  { PostsCategoryComponent} from "./pages/posts-category/posts-category.component";
+import { PostsListComponent } from './components/posts-list/posts-list.component';
 
 
 @NgModule({
@@ -32,7 +33,9 @@ import {ReactiveFormsModule} from "@angular/forms";
         ClientesComponent,
         FormContactoComponent,
         ContactComponent,
-        ConveniosComponent
+        ConveniosComponent,
+        PostsCategoryComponent,
+        PostsListComponent
     ],
     exports: [
         NavComponent

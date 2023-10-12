@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/auth.module').then(m => AuthModule),
   },
   {
+    path: '404',
+    component: NotFoundComponent
+  },
+  {
     path: '**',
     component: NotFoundComponent
   },

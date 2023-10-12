@@ -1,0 +1,15 @@
+<div *ngIf="Posts">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12"  *ngFor="let post of Posts">
+        <div class="card mb-3 post">
+          <img class="card-img-top" [src]="post.images[0].uri" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="text-center"><a routerLink="/">Leer más</a></p>
+            <p class="card-text"><small class="text-muted">Publicado {{ post.created_at}}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<app-banner [imagenBack]="imagenBanner"></app-banner>
+<div class="main" style="margin-top: 10px">
+  <div class="container">
+    <section>
+
+      <div class="row">
+        <div class="col-12 text-center" data-background-color="orange">
+          <h1>{{ title}}</h1>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <app-posts-list [Posts]="posts"></app-posts-list>
+    </section>
+
+  </div>
+</div>
+
