@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
-import {CreateContacto, UpdateContacto} from "../interfaces/contacto";
+import {CreateContacto, Solicitud, UpdateContacto} from "../interfaces/contacto";
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class ContactoService {
     return this.http.get(this.url).toPromise();
   }
 
-  async getSolicitud(id: string) {
-    return this.http.get(`${this.url}/${id}`).toPromise();
+  getSolicitud(id: string): Observable<Solicitud> {
+    return this.http.get<Solicitud>(`${this.url}/${id}`);
   }
 }

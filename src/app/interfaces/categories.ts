@@ -1,3 +1,5 @@
+
+
 export interface RequestCategory {
   name: string;
   type: string;
@@ -5,7 +7,7 @@ export interface RequestCategory {
   image: string;
   description: string;
 }
-
+export interface Category extends Partial<RequestCategory>{}
 export interface RequestUpdateCategory {
   name?: string;
   type?: string;
