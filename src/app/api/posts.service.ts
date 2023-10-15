@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
+import {Post} from "../interfaces/post";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class PostsService {
   }
 
   getOne(id: string) {
-
+    return this.http.get<Post>(`${this.urlApi}/${id}`);
   }
 
   getBySlug(slug: string) {

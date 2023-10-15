@@ -4,6 +4,9 @@ import {CategoryService} from "../../../../api/category.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import Swall from "sweetalert2";
 import {ContactoService} from "../../../../api/contacto.service";
+import {Solicitud} from "../../../../interfaces/contacto";
+import {Loadable} from "../../../../Utils/loadable";
+
 
 @Component({
   selector: 'app-contactos-form',
@@ -14,7 +17,8 @@ export class ContactosFormComponent implements OnInit {
   form: FormGroup;
   contacto_id: string | null | undefined;
   title: string = 'Gestionar Solicitud de Contacto';
-  solicitud: any;
+  public solicitud: Solicitud | null = null;
+  loading = true;
   constructor(
     private contactoService: ContactoService,
     private formBuilder: FormBuilder,
@@ -27,20 +31,18 @@ export class ContactosFormComponent implements OnInit {
   ngOnInit(): void {
     this.contacto_id =this.route.snapshot.paramMap.get('id');
     console.log(this.contacto_id);
-    if(!this.contacto_id){
-      console.log('no se busca nada');
-      // TODO: buscar informacion de la categoria
-    }else{
-      console.log('se busca INFO');
+    if(this.contacto_id){
       this.getSolicitud(this.contacto_id);
     }
 
   }
 
-  async getSolicitud(id: string){
-    this.solicitud = await this.contactoService.getSolicitud(id);
-    console.log(this.solicitud);
-    //await this.contactoService.
+  getSolicitud(id: string){
+    this.loading = true;
+    this.contactoService.getSolicitud(id).subscribe((data) => {
+      this.solicitud = data;
+      this.loading = false;
+    });
   }
 
   get nameField() {

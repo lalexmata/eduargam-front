@@ -17,42 +17,39 @@
                     <i class="now-ui-icons ui-1_bell-53"></i>
                   </div>
                   <div class="col-xs-12 text-center">
-                    <strong class="text-center">PENDIENTE</strong>
+                    <strong class="text-center">{{ solicitud?.status === 0 ? 'pendiente' : 'listo' }}</strong>
                   </div>
                 </div>
               </div>
             </div>
             <!-- muestreo de datos-->
-
-            <!-- DATOS DEL CLIENTE-->
+            <!-- DATOS DEL client?.-->
             <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12 text-center">
-              <img src="../assets/img/avatar.jpg" alt="nombre empresa" class="rounded img-fluid img-raised">
+              <img [src]='solicitud?.client?.logo' alt="nombre empresa" class="rounded img-fluid img-raised">
             </div>
             <div class="col-lg-10 col-md-10 col-sm-6 col-xs-12">
               <table class="table-bordered table">
                 <tr class="bg-primary">
                   <td colspan="3">
-                    <h6 class="text-capitalize text-white text-center">Datos del cliente</h6>
+                    <h6 class="text-capitalize text-white text-center">Datos del client?.</h6>
                   </td>
                 </tr>
                 <tr>
-                  <td><strong>NOMBRE:</strong>:KJVBD</td>
-                  <td><strong>RUT:</strong> &nbsp;1-9</td>
-                  <td></td>
+                  <td><b>NOMBRE:</b>: {{ solicitud?.client?.name }}</td>
+                  <td colspan="2"><b>RUT:</b> &nbsp;{{ solicitud?.client?.rut }}</td>
                 </tr>
                 <tr>
-                  <td>RUT:</td>
-                  <td>dsljkbhs</td>
-                  <td>123456</td>
+                  <td><b>PERSONA DE CONTACTO:</b> {{ solicitud?.client?.contact }}</td>
+                  <td colspan="2"><b>TELF: </b> {{ solicitud?.client?.telephone }}</td>
                 </tr>
                 <tr>
-                  <td>DIRECCIÓN</td>
-                  <td>dsljkbhs</td>
-                  <td>123456</td>
+                  <td><b>DIRECCIÓN:</b> {{ solicitud?.client?.address }}</td>
+                  <td><b>CIUDAD:</b> {{ solicitud?.client?.city }}</td>
+                  <td><b>CIUDAD:</b> {{ solicitud?.client?.comuna }}</td>
                 </tr>
               </table>
             </div>
-            <!-- FIN DATOS DEL CLIENTE-->
+            <!-- FIN DATOS DEL client?.-->
             <!-- INFORMACION DLE SERVICIO-->
             <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12">
               <table class="table-bordered table">
@@ -62,13 +59,12 @@
                   </td>
                 </tr>
                 <tr>
-                  <td colspan="2"><strong>TIPO DE SERVICIO:</strong> TIPO DE SERVICIO </td>
+                  <td colspan="2"><strong>TIPO DE SERVICIO:</strong> {{ solicitud?.category?.name }} </td>
                 </tr>
                 <tr>
                   <td colspan="2">
                     <strong>DESCRIPCIÓN DEL CLIENTE:</strong> <br>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    {{ solicitud?.comments }}
                   </td>
 
                 </tr>
