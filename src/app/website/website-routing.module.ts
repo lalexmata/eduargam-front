@@ -4,6 +4,7 @@ import {LayoutComponent} from "./components/layout/layout.component";
 import {HomeComponent} from "./components/home/home.component";
 import {ContactComponent} from "./pages/contact/contact.component";
 import {PostsCategoryComponent} from "./pages/posts-category/posts-category.component";
+import {PostsDetailComponent} from "./pages/posts-detail/posts-detail.component";
 
 
 const routes: Routes = [
@@ -30,6 +31,10 @@ const routes: Routes = [
           {
             path: 'categoria/:category',
             component: PostsCategoryComponent,
+          },
+          {
+            path: ':id',
+            component: PostsDetailComponent
           }
         ]
       }

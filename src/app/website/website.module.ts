@@ -18,6 +18,7 @@ import { ConveniosComponent } from './components/convenios/convenios.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import  { PostsCategoryComponent} from "./pages/posts-category/posts-category.component";
 import { PostsListComponent } from './components/posts-list/posts-list.component';
+import { PostsDetailComponent } from './pages/posts-detail/posts-detail.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { PostsListComponent } from './components/posts-list/posts-list.component
         ContactComponent,
         ConveniosComponent,
         PostsCategoryComponent,
-        PostsListComponent
+        PostsListComponent,
+        PostsDetailComponent
     ],
     exports: [
         NavComponent
