@@ -1,3 +1,5 @@
+import {Category} from "./categories";
+
 export interface Post {
   id: number;
   title: string;
@@ -6,6 +8,7 @@ export interface Post {
   created_at: string;
   updated_at: string;
   images: image_post[];
+  categories?: Category[];
 }
 
 export interface image_post {
@@ -15,3 +18,4 @@ export interface image_post {
   created_at: string;
   updated_at: string;
 }
+
