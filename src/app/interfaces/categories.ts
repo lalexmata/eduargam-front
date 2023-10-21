@@ -1,6 +1,7 @@
 
 
 export interface RequestCategory {
+  id?: number;
   name: string;
   type: string;
   slug: string;
