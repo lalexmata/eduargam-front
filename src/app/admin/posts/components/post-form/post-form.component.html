@@ -1,0 +1,90 @@
+<div class="card">
+  <div class="card-header">
+    <div class="text-center" data-background-color="orange" style="padding: 5px">
+      <h3>{{ title }}</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="home1" role="tabpanel">
+        <form action="" [formGroup]="form">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <label for="title">Título:</label>
+              <div class="input-group no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-user-circle"></i></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Título" formControlName="title">
+              </div>
+              <small class="message-error">
+                <strong *ngIf="titleField?.touched && titleField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              <label for="categories">Categorias Asociadas:</label>
+              <div class="input-group no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-tag"></i></span>
+                </div>
+                <select formControlName="categories" class="form-control" multiple="true">
+                  <option value="">Seleccione ...</option>
+                  <option *ngFor="let categoria of categorias" [value]="categoria.id">{{ categoria.name }}</option>
+                </select>
+              </div>
+              <small class="message-error">
+                <strong *ngIf="categoriesField?.touched && categoriesField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+              <label for="status">Estado:</label>
+              <div class="input-group no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-tag"></i></span>
+                </div>
+                <select formControlName="status" class="form-control">
+                  <option value="">Seleccione ...</option>
+                  <option value="0">Activo</option>
+                  <option value="1">Inactivo</option>
+                </select>
+              </div>
+              <small class="message-error">
+                <strong *ngIf="statusField?.touched && statusField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
+            </div>
+            <div class="col-xs-12 col-12">
+              <label for="description">Descripción:</label>
+              <div class="input-group no-border">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fa fa-comments"></i></span>
+                </div>
+                <textarea formControlName="description" class="form-control" cols="30" rows="10"></textarea>
+              </div>
+              <small class="message-error">
+                <strong *ngIf="descriptionField?.touched && descriptionField?.hasError('required')">Este campo es obligatorio</strong>
+              </small>
+            </div>
+
+          </div>
+          <div class="card-footer text-center">
+            <button
+              type="button"
+              class="btn btn-primary"
+              (click)="save()"
+            >
+              Guardar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              (click)="cancel()"
+            >
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

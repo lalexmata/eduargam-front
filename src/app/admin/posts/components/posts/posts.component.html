@@ -1,0 +1,58 @@
+<div class="text-right">
+  <a routerLink="create">
+    <button class="btn btn-primary">
+      <i class="fa fa-plus"></i> Nueva
+    </button>
+  </a>
+</div>
+<div class="card">
+  <div class="card-header">
+    <div data-background-color="orange" class="col-12 text-center">
+      <h3>Listado de Publicaciones</h3>
+    </div>
+  </div>
+  <div class="card-body">
+    <!-- Tab panes -->
+    <div class="row">
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th scope="col">Título</th>
+            <th scope="col">Fecha creación</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Categorias</th>
+            <th scope="col">Acción</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let post of posts">
+            <th scope="row">{{ post.title }}</th>
+            <td>{{ post.created_at | date: 'dd-MM-YYYY HH:mm' }}</td>
+            <td>{{ post.status === 1 ? 'Inactivo' : 'Activo' }}</td>
+            <td>
+              <ul>
+                <li *ngFor="let categoria of post.categories">{{ categoria.name }}</li>
+              </ul>
+            </td>
+            <td>
+              <a [routerLink]="['edit', post.id]">
+                <button class="btn btn-info btn-sm" title="Editar">
+                  <i class="fa fa-edit"></i>
+                </button>
+              </a>
+              <button
+                class="btn btn-danger btn-sm"
+                title="Eliminar"
+                (click)="deletePost(post.id)"
+              >
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,7 +13,7 @@ export class PostsService {
   ) { }
 
   getAll() {
-    return this.http.get(this.urlApi);
+    return this.http.get<Post[]>(this.urlApi);
   }
 
   getOne(id: string) {
