@@ -31,6 +31,10 @@ const routes: Routes = [
         path: 'users',
         loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
       },
+      {
+        path: 'multimedia',
+        loadChildren: () => import('./multimedia/multimedia.module').then(m => m.MultimediaModule)
+      }
 
     ]
 
