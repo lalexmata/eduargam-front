@@ -22,6 +22,7 @@ export class CategoryFormComponent implements OnInit {
   ) {
     this.form = this.buildForm();
   }
+  
 
   ngOnInit(): void {
     this.category_id =this.route.snapshot.paramMap.get('id');
